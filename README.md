@@ -1,148 +1,197 @@
-# ReliaQuest Coding Challenge
+## Project Overview
 
-#### In this assessment you will be tasked with filling out the functionality of different methods that will be listed further down.
+This is a Spring Boot-based Employee Management API that provides comprehensive functionality for managing employee records through a RESTful interface. The application integrates with a Mock Employee API and implements robust error handling, logging, and request management.
 
-These methods will require some level of API interactions with Mock Employee API at http://localhost:8112/api/v1/employee.
+## Features
 
-Please keep the following in mind when doing this assessment: 
-* clean coding practices
-* test driven development 
-* logging
-* scalability
+- Retrieve all employees
+- Search employees by name
+- Get employee by ID
+- Find highest salary
+- Get top earning employees
+- Create new employees
+- Delete employees
+- Advanced request handling with:
+  - Retry mechanisms
+  - Concurrent request limiting
+  - Timeout management
 
-See the section **How to Run Mock Employee API** for further instruction on starting the Mock Employee API.
+## Technical Specifications
 
-### Endpoints to implement (API module)
+### Core Technologies
+- Java 17+
+- Spring Boot
+- Gradle
+- Spring Web
+- RestTemplate
+- Lombok
+- SLF4J Logging
 
-_See `com.reliaquest.api.controller.IEmployeeController` for details._
+### Key Architecture Components
+- Concurrent request management
+- Retry mechanism with exponential backoff
+- Semaphore-based request limiting
+- Comprehensive error handling
+- Logging for all critical operations
 
-getAllEmployees()
+## Endpoints
 
-    output - list of employees
-    description - this should return all employees
+### 1. Get All Employees
+- **Endpoint:** `/api/v1/employee`
+- **Method:** GET
+- **Description:** Retrieves all employees from the system
 
-getEmployeesByNameSearch(...)
+### 2. Search Employees by Name
+- **Endpoint:** `/api/v1/employee/search?name={searchString}`
+- **Method:** GET
+- **Description:** Finds employees whose names contain the given search string
 
-    path input - name fragment
-    output - list of employees
-    description - this should return all employees whose name contains or matches the string input provided
+### 3. Get Employee by ID
+- **Endpoint:** `/api/v1/employee/{id}`
+- **Method:** GET
+- **Description:** Retrieves a specific employee by their unique identifier
 
-getEmployeeById(...)
+### 4. Get Highest Salary
+- **Endpoint:** `/api/v1/employee/highest-salary`
+- **Method:** GET
+- **Description:** Returns the highest salary among all employees
 
-    path input - employee ID
-    output - employee
-    description - this should return a single employee
+### 5. Get Top 10 Highest Earning Employees
+- **Endpoint:** `/api/v1/employee/top-earners`
+- **Method:** GET
+- **Description:** Retrieves names of top 10 highest-paid employees
 
-getHighestSalaryOfEmployees()
+### 6. Create Employee
+- **Endpoint:** `/api/v1/employee`
+- **Method:** POST
+- **Description:** Creates a new employee record
+- **Request Body:** Employee details (name, salary, age, title)
 
-    output - integer of the highest salary
-    description - this should return a single integer indicating the highest salary of amongst all employees
+### 7. Delete Employee
+- **Endpoint:** `/api/v1/employee/{id}`
+- **Method:** DELETE
+- **Description:** Deletes an employee by their unique identifier
 
-getTop10HighestEarningEmployeeNames()
+## Request Handling Features
 
-    output - list of employees
-    description - this should return a list of the top 10 employees based off of their salaries
+### Concurrency Management
+- Maximum 100 concurrent requests
+- 5-second timeout for request acquisition
+- Graceful handling of request overflow
 
-createEmployee(...)
+### Error Handling
+- Retry mechanism (3 attempts with 1-second delay)
+- Comprehensive logging
+- Proper HTTP status code management
 
-    body input - attributes necessary to create an employee
-    output - employee
-    description - this should return a single employee, if created, otherwise error
+## Configuration
 
-deleteEmployeeById(...)
+### Required Properties
+```properties
+mock.api.base-url=http://localhost:8112
+```
 
-    path input - employee ID
-    output - name of the employee
-    description - this should delete the employee with specified id given, otherwise error
+### Dependency Requirements
+- Spring Boot Starter Web
+- Spring Retry
+- Lombok
+- SLF4J
 
-### Endpoints from Mock Employee API (Server module)
+## Running the Application
 
-    request:
-        method: GET
-        full route: http://localhost:8112/api/v1/employee
-    response:
-        {
-            "data": [
-                {
-                    "id": "4a3a170b-22cd-4ac2-aad1-9bb5b34a1507",
-                    "employee_name": "Tiger Nixon",
-                    "employee_salary": 320800,
-                    "employee_age": 61,
-                    "employee_title": "Vice Chair Executive Principal of Chief Operations Implementation Specialist",
-                    "employee_email": "tnixon@company.com",
-                },
-                ....
-            ],
-            "status": "Successfully processed request."
-        }
+### Mock Employee API (Server Module)
+Start the Server Spring Boot application:
+```bash
+./gradlew server:bootRun
+```
+
+**Note:** 
+- Each invocation of the Server application triggers a new list of mock employee data
+- Keep the server running for consistent data during testing
+- The web server will randomly choose when to rate limit requests
+
+### Main Application
+```bash
+./gradlew api:bootRun
+```
+
+## Code Formatting
+
+This project uses [Diffplug Spotless](https://github.com/diffplug/spotless/tree/main/plugin-gradle) to enforce formatting and style guidelines.
+
+To resolve any formatting errors:
+```bash
+./gradlew spotlessApply
+```
+
+## Build and Test
+
+### Build the Project
+```bash
+./gradlew clean build
+```
+
+### Run Tests
+```bash
+./gradlew test
+```
+
+## Testing Strategy
+
+### Test Coverage
+- Integration Tests
+  - Complete employee lifecycle
+  - Concurrency scenarios
+  - Error handling
+- Unit Tests
+  - Controller methods
+  - Request processing
+  - Error scenarios
+
+### Test Frameworks
+- JUnit 5
+- Spring Boot Test
+- Mockito
+- AssertJ
+
+## Performance Considerations
+
+- Request limiter prevents system overload
+- Timeout mechanisms protect against hanging requests
+- Efficient stream processing for data manipulation
+- Logarithmic search and filter operations
+
+## Logging
+
+Comprehensive logging implemented using SLF4J:
+- Information logs for all API interactions
+- Warning logs for potential issues
+- Error logs with stack traces
+- Request tracking and performance monitoring
+
+## Security Considerations
+
+- Input validation
+- Controlled concurrent access
+- Error information masking
+- Retry mechanism prevents temporary failure escalation
+
+## Potential Improvements
+- Implement more granular error handling
+- Add authentication and authorization
+- Implement caching mechanisms
+- Enhanced monitoring and metrics
+
+## Contribution Guidelines
+1. Follow existing code style
+2. Write comprehensive tests
+3. Update documentation
+4. Ensure no breaking changes
+5. Run `./gradlew spotlessApply` before committing
+
+## License
+Proprietary - Internal Use Only
+
 ---
-    request:
-        method: GET
-        path: 
-            id (String)
-        full route: http://localhost:8112/api/v1/employee/{id}
-        note: 404-Not Found, if entity is unrecognizable
-    response:
-        {
-            "data": {
-                "id": "5255f1a5-f9f7-4be5-829a-134bde088d17",
-                "employee_name": "Bill Bob",
-                "employee_salary": 89750,
-                "employee_age": 24,
-                "employee_title": "Documentation Engineer",
-                "employee_email": "billBob@company.com",
-            },
-            "status": ....
-        }
----
-    request:
-        method: POST
-        body: 
-            name (String | not blank),
-            salary (Integer | greater than zero),
-            age (Integer | min = 16, max = 75),
-            title (String | not blank)
-        full route: http://localhost:8112/api/v1/employee
-    response:
-        {
-            "data": {
-                "id": "d005f39a-beb8-4390-afec-fd54e91d94ee",
-                "employee_name": "Jill Jenkins",
-                "employee_salary": 139082,
-                "employee_age": 48,
-                "employee_title": "Financial Advisor",
-                "employee_email": "jillj@company.com",
-            },
-            "status": ....
-        }
----
-    request:
-        method: DELETE
-        body:
-            name (String | not blank)
-        full route: http://localhost:8112/api/v1/employee/{name}
-    response:
-        {
-            "data": true,
-            "status": ....
-        }
 
-### How to Run Mock Employee API (Server module)
-
-Start **Server** Spring Boot application.
-`./gradlew server:bootRun`
-
-Each invocation of **Server** application triggers a new list of mock employee data. While live testing, you'll want to keep 
-this server running if you require consistent data. Additionally, the web server will randomly choose when to rate
-limit requests, so keep this mind when designing/implementing the actual Employee API.
-
-_Note_: Console logs each mock employee upon startup.
-
-### Code Formatting
-
-This project utilizes Gradle plugin [Diffplug Spotless](https://github.com/diffplug/spotless/tree/main/plugin-gradle) to enforce format
-and style guidelines with every build. 
-
-To resolve any errors, you must run **spotlessApply** task.
-`./gradlew spotlessApply`
-
+**Note:** Ensure Mock Employee API is running at `http://localhost:8112` before starting the application.
