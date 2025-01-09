@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.reliaquest.api.ApiIntegrationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-01-09T14:32:17" hostname="Ratneshs-MacBook-Pro.local" time="0.125">
+  <properties/>
+  <testcase name="Should handle invalid operations appropriately" classname="com.reliaquest.api.ApiIntegrationTest" time="0.037"/>
+  <testcase name="Should update existing employee information" classname="com.reliaquest.api.ApiIntegrationTest" time="0.025"/>
+  <testcase name="Should create new employee with provided details" classname="com.reliaquest.api.ApiIntegrationTest" time="0.006"/>
+  <testcase name="Should perform complete employee lifecycle operations" classname="com.reliaquest.api.ApiIntegrationTest" time="0.021"/>
+  <testcase name="Should perform various search operations on employees" classname="com.reliaquest.api.ApiIntegrationTest" time="0.016"/>
+  <testcase name="Should perform salary-based operations across employees" classname="com.reliaquest.api.ApiIntegrationTest" time="0.019"/>
+  <system-out><![CDATA[2025-01-09T20:02:17.233+05:30  INFO 46041 --- [employee-api] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.reliaquest.api.ApiIntegrationTest]: ApiIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-09T20:02:17.234+05:30  INFO 46041 --- [employee-api] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.reliaquest.api.ApiApplication for test class com.reliaquest.api.ApiIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v3.2.10)
+
+2025-01-09T20:02:17.245+05:30  INFO 46041 --- [employee-api] [    Test worker] com.reliaquest.api.ApiIntegrationTest    : Starting ApiIntegrationTest using Java 17.0.13 with PID 46041 (started by ratneshsachan in /Users/ratneshsachan/reliaquest/java-employee-challenge/api)
+2025-01-09T20:02:17.245+05:30 DEBUG 46041 --- [employee-api] [    Test worker] com.reliaquest.api.ApiIntegrationTest    : Running with Spring Boot v3.2.10, Spring v6.1.13
+2025-01-09T20:02:17.245+05:30  INFO 46041 --- [employee-api] [    Test worker] com.reliaquest.api.ApiIntegrationTest    : No active profile set, falling back to 1 default profile: "default"
+2025-01-09T20:02:17.386+05:30  INFO 46041 --- [employee-api] [    Test worker] com.reliaquest.api.ApiIntegrationTest    : Started ApiIntegrationTest in 0.151 seconds (process running for 1.67)
+2025-01-09T20:02:17.389+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: ac60c28a-b03e-48ec-b222-a23a1dd18847
+2025-01-09T20:02:17.421+05:30  WARN 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Employee not found with id: ac60c28a-b03e-48ec-b222-a23a1dd18847
+2025-01-09T20:02:17.422+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Deleting employee with id: ac60c28a-b03e-48ec-b222-a23a1dd18847
+2025-01-09T20:02:17.422+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: ac60c28a-b03e-48ec-b222-a23a1dd18847
+2025-01-09T20:02:17.424+05:30  WARN 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Employee not found with id: ac60c28a-b03e-48ec-b222-a23a1dd18847
+2025-01-09T20:02:17.426+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Creating new employee: Initial Name
+2025-01-09T20:02:17.442+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Creating new employee: Updated Name
+2025-01-09T20:02:17.445+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Deleting employee with id: 5b6e70ff-a743-4170-a3ce-fd0b7d1e3e64
+2025-01-09T20:02:17.445+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: 5b6e70ff-a743-4170-a3ce-fd0b7d1e3e64
+2025-01-09T20:02:17.450+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Creating new employee: Jill Jenkins
+2025-01-09T20:02:17.453+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Deleting employee with id: 31ea7503-6b21-4640-b797-06db10270d4c
+2025-01-09T20:02:17.453+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: 31ea7503-6b21-4640-b797-06db10270d4c
+2025-01-09T20:02:17.456+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Creating new employee: Test Employee
+2025-01-09T20:02:17.459+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: c853641b-9b52-4ac7-b7d7-3bd1a31fce3b
+2025-01-09T20:02:17.466+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching all employees. Active requests: -12
+2025-01-09T20:02:17.471+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Searching employees with name containing: Test
+2025-01-09T20:02:17.471+05:30  INFO 46041 --- [employee-api] [pool-3-thread-1] c.r.api.controller.EmployeeController    : Fetching all employees. Active requests: -13
+2025-01-09T20:02:17.473+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Deleting employee with id: c853641b-9b52-4ac7-b7d7-3bd1a31fce3b
+2025-01-09T20:02:17.473+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: c853641b-9b52-4ac7-b7d7-3bd1a31fce3b
+2025-01-09T20:02:17.475+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: c853641b-9b52-4ac7-b7d7-3bd1a31fce3b
+2025-01-09T20:02:17.476+05:30  WARN 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Employee not found with id: c853641b-9b52-4ac7-b7d7-3bd1a31fce3b
+2025-01-09T20:02:17.477+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Creating new employee: John Developer
+2025-01-09T20:02:17.480+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Creating new employee: Johnny Engineer
+2025-01-09T20:02:17.482+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Searching employees with name containing: John Developer
+2025-01-09T20:02:17.483+05:30  INFO 46041 --- [employee-api] [pool-4-thread-1] c.r.api.controller.EmployeeController    : Fetching all employees. Active requests: -20
+2025-01-09T20:02:17.485+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Searching employees with name containing: John
+2025-01-09T20:02:17.485+05:30  INFO 46041 --- [employee-api] [pool-5-thread-1] c.r.api.controller.EmployeeController    : Fetching all employees. Active requests: -22
+2025-01-09T20:02:17.487+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Searching employees with name containing: john
+2025-01-09T20:02:17.487+05:30  INFO 46041 --- [employee-api] [pool-6-thread-1] c.r.api.controller.EmployeeController    : Fetching all employees. Active requests: -24
+2025-01-09T20:02:17.488+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Deleting employee with id: 612a2914-e5f6-4ee6-b086-ef79055defc9
+2025-01-09T20:02:17.488+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: 612a2914-e5f6-4ee6-b086-ef79055defc9
+2025-01-09T20:02:17.491+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Deleting employee with id: 9d94ed31-1a5b-42b3-9b2f-c028a511616e
+2025-01-09T20:02:17.491+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: 9d94ed31-1a5b-42b3-9b2f-c028a511616e
+2025-01-09T20:02:17.494+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Creating new employee: High Salary Employee
+2025-01-09T20:02:17.497+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Creating new employee: Mid Salary Employee
+2025-01-09T20:02:17.499+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Creating new employee: Entry Salary Employee
+2025-01-09T20:02:17.502+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching highest salary
+2025-01-09T20:02:17.502+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching all employees. Active requests: -33
+2025-01-09T20:02:17.504+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching top 10 highest earning employee names
+2025-01-09T20:02:17.504+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching all employees. Active requests: -35
+2025-01-09T20:02:17.506+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Deleting employee with id: 7a368384-ff5b-4dbe-9cca-849af300a30c
+2025-01-09T20:02:17.506+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: 7a368384-ff5b-4dbe-9cca-849af300a30c
+2025-01-09T20:02:17.508+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Deleting employee with id: 8bbb55f5-2da5-4c05-a52e-f7c5b9cfddbe
+2025-01-09T20:02:17.508+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: 8bbb55f5-2da5-4c05-a52e-f7c5b9cfddbe
+2025-01-09T20:02:17.510+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Deleting employee with id: 7aff0a0a-f2d0-44bb-8293-ece0b8bd1441
+2025-01-09T20:02:17.510+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: 7aff0a0a-f2d0-44bb-8293-ece0b8bd1441
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

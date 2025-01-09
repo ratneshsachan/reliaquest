@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.reliaquest.api.ApiApplicationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-01-09T14:32:17" hostname="Ratneshs-MacBook-Pro.local" time="0.069">
+  <properties/>
+  <testcase name="Should retrieve employee by ID successfully" classname="com.reliaquest.api.ApiApplicationTest" time="0.045"/>
+  <testcase name="Should retrieve all employees successfully" classname="com.reliaquest.api.ApiApplicationTest" time="0.004"/>
+  <testcase name="Should find employees by name search" classname="com.reliaquest.api.ApiApplicationTest" time="0.003"/>
+  <testcase name="Should return top 10 highest earning employees" classname="com.reliaquest.api.ApiApplicationTest" time="0.002"/>
+  <testcase name="Should return the highest salary among employees" classname="com.reliaquest.api.ApiApplicationTest" time="0.003"/>
+  <testcase name="Should delete employee successfully" classname="com.reliaquest.api.ApiApplicationTest" time="0.002"/>
+  <testcase name="Should create new employee successfully" classname="com.reliaquest.api.ApiApplicationTest" time="0.002"/>
+  <system-out><![CDATA[20:02:16.035 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.reliaquest.api.ApiApplicationTest]: ApiApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:02:16.070 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.reliaquest.api.ApiApplication for test class com.reliaquest.api.ApiApplicationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v3.2.10)
+
+2025-01-09T20:02:16.210+05:30  INFO 46041 --- [employee-api] [    Test worker] com.reliaquest.api.ApiApplicationTest    : Starting ApiApplicationTest using Java 17.0.13 with PID 46041 (started by ratneshsachan in /Users/ratneshsachan/reliaquest/java-employee-challenge/api)
+2025-01-09T20:02:16.210+05:30 DEBUG 46041 --- [employee-api] [    Test worker] com.reliaquest.api.ApiApplicationTest    : Running with Spring Boot v3.2.10, Spring v6.1.13
+2025-01-09T20:02:16.210+05:30  INFO 46041 --- [employee-api] [    Test worker] com.reliaquest.api.ApiApplicationTest    : No active profile set, falling back to 1 default profile: "default"
+2025-01-09T20:02:17.151+05:30  INFO 46041 --- [employee-api] [    Test worker] com.reliaquest.api.ApiApplicationTest    : Started ApiApplicationTest in 1.034 seconds (process running for 1.435)
+2025-01-09T20:02:17.186+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: 1
+2025-01-09T20:02:17.210+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching all employees. Active requests: -1
+2025-01-09T20:02:17.215+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Searching employees with name containing: John
+2025-01-09T20:02:17.216+05:30  INFO 46041 --- [employee-api] [pool-2-thread-1] c.r.api.controller.EmployeeController    : Fetching all employees. Active requests: -2
+2025-01-09T20:02:17.219+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching top 10 highest earning employee names
+2025-01-09T20:02:17.219+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching all employees. Active requests: -4
+2025-01-09T20:02:17.223+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching highest salary
+2025-01-09T20:02:17.223+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching all employees. Active requests: -6
+2025-01-09T20:02:17.227+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Deleting employee with id: 1
+2025-01-09T20:02:17.227+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Fetching employee with id: 1
+2025-01-09T20:02:17.230+05:30  INFO 46041 --- [employee-api] [    Test worker] c.r.api.controller.EmployeeController    : Creating new employee: John Doe
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
